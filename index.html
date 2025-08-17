@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anaya Frozen Foods - Homemade Goodness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Icon Library for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- =========== Header & Navigation =========== -->
+    <header class="main-header">
+        <div class="container">
+            <a href="#home" class="brand-logo">
+                <img src="images/logo.jpeg" alt="Anaya Frozen Foods Logo" class="logo-img">
+                <span>Anaya Frozen Foods</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                 <div class="dark-mode-toggle">
+                    <i class="fas fa-sun"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="dark-mode-checkbox">
+                        <span class="slider"></span>
+                    </label>
+                    <i class="fas fa-moon"></i>
+                </div>
+                <button class="mobile-nav-toggle" aria-label="Open navigation">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- =========== Home Section (Glassmorphism Ready) =========== -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Welcome to Anaya Frozen Foods</h1>
+                <p>Authentic, homemade frozen delights, crafted with love and ready for your kitchen.</p>
+                <a href="#menu" class="btn-primary">View Full Menu</a>
+            </div>
+        </section>
+
+        <!-- =========== Popular Products Section =========== -->
+        <section class="popular-products">
+            <div class="container">
+                <h2 class="section-title">Our Most Popular Items</h2>
+                <div class="product-grid">
+                    <div class="product-card" data-product-id="shami-kabab">
+                        <img src="images/Shami.jpeg" alt="Shami " class="product-image">
+                        <h3 class="product-name">Shami </h3>
+                        <p class="product-details">12pcs - 600rs</p>
+                    </div>
+                    <div class="product-card" data-product-id="chicken-rolls">
+                        <img src="images/Roll.jpeg" alt="Chicken Rolls" class="product-image">
+                        <h3 class="product-name">Chicken Rolls</h3>
+                        <p class="product-details">12pcs - 600rs</p>
+                    </div>
+                     <div class="product-card" data-product-id="chicken-sticks">
+                        <img src="images/chicken sticks.jpeg" alt="Chicken Sticks" class="product-image">
+                        <h3 class="product-name">Chicken Sticks</h3>
+                        <p class="product-details">12pcs - 500rs</p>
+                    </div>
+                    <div class="product-card" data-product-id="cheese-balls">
+                        <img src="images/Cheese Balls.jpeg" alt="Cheese Balls" class="product-image">
+                        <h3 class="product-name">Cheese Balls</h3>
+                        <p class="product-details">8pcs - 400rs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== Full Menu Section =========== -->
+        <section id="menu" class="menu-section">
+            <div class="container">
+                <h2 class="section-title">Our Full Menu</h2>
+                <div class="menu-controls">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="chicken">Chicken</button>
+                        <button class="filter-btn" data-filter="beef">Beef</button>
+                        <button class="filter-btn" data-filter="snacks">Snacks</button>
+                        <button class="filter-btn" data-filter="seafood">Seafood</button>
+                        <button class="filter-btn" data-filter="desi">Desi</button>
+                    </div>
+                    <input type="text" id="search-bar" placeholder="Search for food...">
+                </div>
+                <div id="menu-grid" class="product-grid">
+                    <!-- Menu items will be dynamically inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== About Us Section =========== -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">Our Story</h2>
+                <div class="about-content">
+                    <img src="images/logo.jpeg" alt="Anaya Frozen Foods" class="about-image">
+                    <div class="about-text">
+                        <h3>Crafted with Love in Bahawalpur</h3>
+                        <p>Founded in 2019 by a passionate home-chef, Anaya Frozen Foods was named after her youngest daughter, Anaya. What started as a small venture has grown into a beloved local brand, built on a foundation of quality, taste, and trust.</p>
+                        <p>Working tirelessly, she has built a loyal audience in <strong>Bahawalpur, Punjab, Pakistan</strong>. She delivers her wide range of delicious, ready-to-cook frozen foods all over the city, bringing convenience and authentic flavors to countless homes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== Contact Section =========== -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-subtitle">Ready to place an order? Contact us on WhatsApp for the fastest response!</p>
+                <div class="contact-details">
+                    <a href="https://wa.me/923090903519" class="contact-card" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <p>0309-0903519</p>
+                    </a>
+                    <a href="tel:03090903519" class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>0309-0903519</p>
+                    </a>
+                    <a href="https://www.facebook.com/share/1DB3FqsbuK/?mibextid=wwXIfr" class="contact-card" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                        <h3>Facebook</h3>
+                        <p>Anaya Frozen Foods</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========== Footer =========== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Terms and Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <p>&copy; 2024 Anaya Frozen Foods. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- =========== Shopping List Sidebar =========== -->
+    <aside id="shopping-list" class="shopping-list">
+        <button class="close-list-btn">&times;</button>
+        <h2>Your Order List</h2>
+        <div id="list-items" class="list-items">
+            <p class="empty-list-msg">Your list is empty. Add items from the menu!</p>
+        </div>
+        <div class="list-summary">
+            <div class="subtotal">
+                <span>Subtotal:</span>
+                <span id="subtotal-price">0rs</span>
+            </div>
+            <a href="https://wa.me/923090903519" class="btn-primary checkout-btn" target="_blank">Order on WhatsApp</a>
+        </div>
+    </aside>
+    <div id="list-overlay" class="overlay"></div>
+    <button id="open-list-btn" class="open-list-btn">
+        <i class="fas fa-list-alt"></i>
+        <span id="list-item-count">0</span>
+    </button>
+
+    <!-- =========== Product Detail Modal =========== -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal-btn">&times;</button>
+            <div id="modal-body">
+                <!-- Product details will be injected here -->
+            </div>
+        </div>
+    </div>
+    <div id="modal-overlay" class="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
