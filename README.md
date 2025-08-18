@@ -42,7 +42,7 @@ This is a static front-end project and does not require any complex installation
 1. Clone the Repository:
 
 https://github.com/EmanFatima21/Frozen-Food-Frontend-.git
-cd anaya-frozen-foods
+
 
 2. Place Your Images:
 
