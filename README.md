@@ -24,6 +24,7 @@ An end-to-end frontend project that builds a complete, interactive, and responsi
 | Deployment         | Netlify, GitHub                              |
 
 **📁 Project Structure**
+
 ├── images/
 │   ├── logo.jpeg
 │   ├── hero-background.jpg
@@ -55,10 +56,10 @@ There are no external packages to install (like npm or pip). All required librar
 
 Simply open the index.html file in your favorite web browser (like Google Chrome, Firefox, or Edge).
 
-# On Windows, you can use:
+ On Windows, you can use:
 start index.html
 
-# On macOS, you can use:
+ On macOS, you can use:
 open index.html
 
 Alternatively, you can use a simple web server or the "Live Server" extension in Visual Studio Code for the best experience.
@@ -67,36 +68,36 @@ Alternatively, you can use a simple web server or the "Live Server" extension in
 
 The entire website operates on the client-side using JavaScript to manipulate the DOM.
 
-Data Management (script.js):
+1-Data Management (script.js):
 All product information (name, price, image, category, description) is stored in a single JavaScript array of objects called menuItems. This acts as a client-side database, making it easy to add or update products by simply editing this array.
 
-Dynamic Rendering (script.js):
+2-Dynamic Rendering (script.js):
 On page load, the renderMenu() function reads the menuItems array and dynamically generates the HTML for each product card, inserting them into the menu grid. This means you don't have to write repetitive HTML for each product.
 
-Event Handling (script.js):
+3-Event Handling (script.js):
 The application uses addEventListener to manage all user interactions:
 
-Search Bar: Filters the menuItems array based on user input and re-renders the menu.
+4-Search Bar: Filters the menuItems array based on user input and re-renders the menu.
 
-Filter Buttons: Filters the menuItems array by category and re-renders the menu.
+5-Filter Buttons: Filters the menuItems array by category and re-renders the menu.
 
-"Add to List" Buttons: Pushes the selected product into a shoppingList array and re-renders the list sidebar.
+6-"Add to List" Buttons: Pushes the selected product into a shoppingList array and re-renders the list sidebar.
 
-Shopping List Controls: Modifies the shoppingList array (increasing/decreasing quantity, removing items) and updates the view.
+7-Shopping List Controls: Modifies the shoppingList array (increasing/decreasing quantity, removing items) and updates the view.
 
-Dark Mode Toggle: Adds or removes the .dark-mode class from the <body> tag and saves the user's choice to localStorage.
+8-Dark Mode Toggle: Adds or removes the .dark-mode class from the <body> tag and saves the user's choice to localStorage.
 
 **🔮 Future Enhancements**
 
 This project provides a solid foundation. The next logical steps to turn this into a full-fledged e-commerce solution are:
 
-Headless CMS Integration: Connect the frontend to a Headless CMS (like Sanity.io or Strapi). This would allow the business owner to add, edit, and manage products from a user-friendly admin panel without touching any code.
+1-Headless CMS Integration: Connect the frontend to a Headless CMS (like Sanity.io or Strapi). This would allow the business owner to add, edit, and manage products from a user-friendly admin panel without touching any code.
 
-Online Payment Gateway: Integrate a local payment provider (e.g., EasyPaisa, JazzCash) to allow for online pre-payments.
+2-Online Payment Gateway: Integrate a local payment provider (e.g., EasyPaisa, JazzCash) to allow for online pre-payments.
 
-Backend & Order Management: Build a simple backend (e.g., with Node.js/Express) to handle incoming orders, which would be displayed in a secure admin dashboard for the owner to track and manage.
+3-Backend & Order Management: Build a simple backend (e.g., with Node.js/Express) to handle incoming orders, which would be displayed in a secure admin dashboard for the owner to track and manage.
 
-User Accounts: Allow customers to create accounts to save their details and view their order history.
+4-User Accounts: Allow customers to create accounts to save their details and view their order history.
 
 **📧 Contact**
 
