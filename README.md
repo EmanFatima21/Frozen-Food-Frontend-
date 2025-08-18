@@ -6,13 +6,19 @@ An end-to-end frontend project that builds a complete, interactive, and responsi
 
 **🌟 Key Features :**
 
-	✨ Dynamic Product Menu: The entire product catalog is rendered dynamically using JavaScript, allowing for easy updates and management directly within the code.
-	🛒 Interactive Shopping List: Users can add items to a persistent shopping list, adjust quantities, remove items, and see a running subtotal of their planned order.
-	🔍 Real-Time Search & Filtering: Instantly find products with a live search bar and filter the menu by categories (Chicken, Beef, Snacks, etc.) with a single click.
-	🎨 Glassmorphism & Modern UI: A stunning hero section with a "frosted glass" effect and a clean, professional layout that enhances the brand's visual appeal.
-	🌓 Dark/Light Mode Toggle: A user-friendly toggle switch allows customers to switch between a light and dark theme, with their preference saved in their browser for future visits.
-	📱 Fully Responsive Design: The single-page application is built with a mobile-first approach, ensuring a seamless experience on all devices, from smartphones to desktops.
-	📋 Product Detail Modal: Clicking on any product image opens a detailed pop-up view with a larger photo, description, price, and availability status.
+	**✨ Dynamic Product Menu:** The entire product catalog is rendered dynamically using JavaScript, allowing for easy updates and management directly within the code.
+ 
+**	🛒 Interactive Shopping List:** Users can add items to a persistent shopping list, adjust quantities, remove items, and see a running subtotal of their planned order.
+
+**	🔍 Real-Time Search & Filtering:** Instantly find products with a live search bar and filter the menu by categories (Chicken, Beef, Snacks, etc.) with a single click.
+
+	**🎨 Glassmorphism & Modern UI:** A stunning hero section with a "frosted glass" effect and a clean, professional layout that enhances the brand's visual appeal.
+ 
+	**🌓 Dark/Light Mode Toggle:** A user-friendly toggle switch allows customers to switch between a light and dark theme, with their preference saved in their browser for future visits.
+ 
+	**📱 Fully Responsive Design:** The single-page application is built with a mobile-first approach, ensuring a seamless experience on all devices, from smartphones to desktops.
+ 
+**	📋 Product Detail Modal:** Clicking on any product image opens a detailed pop-up view with a larger photo, description, price, and availability status.
 
  **🛠️ Tech Stack & Libraries**
 | Category           | Tools & Libraries                            |
