@@ -1,4 +1,4 @@
-**🍔 Anaya Frozen Foods: Interactive E-Commerce Website**
+****🍔 Anaya Frozen Foods: Interactive E-Commerce Website****
 
 An end-to-end frontend project that builds a complete, interactive, and responsive e-commerce website for a local homemade frozen food business. This repository contains the complete static website built with pure HTML, CSS, and JavaScript, designed to provide a professional online presence and a seamless user experience for customers.
 
@@ -24,7 +24,7 @@ An end-to-end frontend project that builds a complete, interactive, and responsi
 | Deployment         | Netlify, GitHub                              |
 
 **📁 Project Structure**
-
+```
 ├── images/
 │   ├── logo.jpeg
 │   ├── hero-background.jpg
@@ -34,6 +34,7 @@ An end-to-end frontend project that builds a complete, interactive, and responsi
 ├── index.html          # Main HTML structure for the single-page app
 ├── style.css           # All custom styling, including dark mode and responsiveness
 ├── script.js           # Core application logic, data management, and DOM manipulation
+```
 
 **⚙️ Installation & Setup**
 
