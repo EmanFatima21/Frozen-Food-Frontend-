@@ -1,10 +1,9 @@
-// =================================================================
-// SANITY.IO CONFIGURATION & DATA FETCHING
-// =================================================================
-
 // Import the official Sanity client library
 import { createClient } from 'https://esm.sh/@sanity/client';
 
+// =================================================================
+// 1. CONFIGURATION: Connect to your Sanity database
+// =================================================================
 const client = createClient({
   projectId: 'tipt9u3l', // Your Project ID
   dataset: 'production',
@@ -74,14 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
         itemsToRender.forEach(item => {
             const card = document.createElement('div');
             card.className = 'product-card';
-            card.dataset.productId = item._id; // Set ID on the card itself
             card.innerHTML = `
-                <img src="${imageUrlFor(item.image)}?w=300&fit=crop" alt="${item.name}" class="product-image">
+                <img src="${imageUrlFor(item.image)}?w=300&fit=crop" alt="${item.name}" class="product-image" data-product-id="${item._id}">
                 <div class="product-card-content">
                     <h3 class="product-name">${item.name}</h3>
                     <p class="product-details">${item.quantity || ''} - ${item.price || 0}rs</p>
-                    <button class="btn-secondary add-to-list-btn-card">
-                        Add to List
+                    <button class="btn-secondary add-to-list-btn-card" data-product-id="${item._id}">
+                        View Details
                     </button>
                 </div>
             `;
@@ -219,21 +217,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- EVENT LISTENERS ---
     
-    // This function will handle clicks on the product grids
-    function handleGridClick(event) {
-        const card = event.target.closest('.product-card');
-        if (!card) return;
-
-        const productId = card.dataset.productId;
-        openModal(productId);
+    function handleMenuGridClick(event) {
+        const image = event.target.closest('.product-image');
+        const button = event.target.closest('.add-to-list-btn-card');
+        
+        if (image) {
+            const productId = image.dataset.productId;
+            openModal(productId);
+        }
+        
+        if (button) {
+            const productId = button.dataset.productId;
+            openModal(productId);
+        }
     }
-    
-    if (menuGrid) menuGrid.addEventListener('click', handleGridClick);
-    if (popularGrid) popularGrid.addEventListener('click', handleGridClick);
+
+    if (menuGrid) menuGrid.addEventListener('click', handleMenuGridClick);
+    if (popularGrid) popularGrid.addEventListener('click', handleMenuGridClick);
 
     if (modal) {
         modal.addEventListener('click', (e) => {
-            // New class for the button inside the modal
             if (e.target.classList.contains('add-to-list-btn-modal')) {
                 addItemToList(e.target.dataset.productId);
                 closeModal();
@@ -247,14 +250,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- ALL OTHER EVENT LISTENERS ---
     if (darkModeCheckbox) { darkModeCheckbox.addEventListener('change', () => setDarkMode(darkModeCheckbox.checked)); }
-    if (searchBar) { /* search logic remains the same */ }
-    filterBtns.forEach(btn => { /* filter logic remains the same */ });
+    if (searchBar) {
+        searchBar.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const activeCategoryBtn = document.querySelector('.filter-btn.active');
+            const activeCategory = activeCategoryBtn ? activeCategoryBtn.dataset.filter : 'all';
+            let itemsToRender = allSanityProducts;
+
+            if (activeCategory !== 'all') {
+                itemsToRender = itemsToRender.filter(item => item.category === activeCategory);
+            }
+            
+            itemsToRender = itemsToRender.filter(item => item.name.toLowerCase().includes(searchTerm));
+            renderMenu(itemsToRender);
+        });
+    }
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const category = btn.dataset.filter;
+            if (searchBar) searchBar.value = '';
+            
+            if (category === 'all') {
+                renderMenu(allSanityProducts);
+            } else {
+                const filteredItems = allSanityProducts.filter(item => item.category === category);
+                renderMenu(filteredItems);
+            }
+        });
+    });
+
     if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
     if (openListBtn) openListBtn.addEventListener('click', openShoppingList);
     if (closeListBtn) closeListBtn.addEventListener('click', closeShoppingList);
     if (listOverlay) listOverlay.addEventListener('click', closeShoppingList);
-    if (listItemsContainer) { /* list item controls logic remains the same */ }
-    window.addEventListener('scroll', () => { /* scroll logic remains the same */ });
+    if (listItemsContainer) {
+        listItemsContainer.addEventListener('click', (e) => {
+            const target = e.target;
+            const parentItem = target.closest('.list-item');
+            if (!parentItem) return;
+            const productId = parentItem.dataset.productId;
+
+            if (target.classList.contains('increase-qty')) {
+                updateItemQuantity(productId, 'increase');
+            } else if (target.classList.contains('decrease-qty')) {
+                updateItemQuantity(productId, 'decrease');
+            } else if (target.classList.contains('remove-item-btn')) {
+                removeItemFromList(productId);
+            }
+        });
+    }
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 60) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
     if (mobileNavToggle) { mobileNavToggle.addEventListener('click', () => mainNav.classList.toggle('open')); }
 
 
@@ -274,14 +337,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 allSanityProducts.slice(0, 4).forEach(item => {
                     const card = document.createElement('div');
                     card.className = 'product-card';
-                    card.dataset.productId = item._id; // Set ID on the card itself
+                    card.dataset.productId = item._id; 
                     card.innerHTML = `
                         <img src="${imageUrlFor(item.image)}?w=300&fit=crop" alt="${item.name}" class="product-image">
                          <div class="product-card-content">
                             <h3 class="product-name">${item.name}</h3>
                             <p class="product-details">${item.quantity} - ${item.price}rs</p>
                             <button class="btn-secondary add-to-list-btn-card">
-                                Add to List
+                                View Details
                             </button>
                         </div>
                     `;
