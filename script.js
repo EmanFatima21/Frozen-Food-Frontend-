@@ -12,6 +12,8 @@ const client = createClient({
   useCdn: false, // Use false for instant updates during development
 });
 
+const productQuery = '*[_type == "product"]';
+
 // Helper function to build image URLs from Sanity image data
 function imageUrlFor(source) {
     if (!source || !source.asset) {
