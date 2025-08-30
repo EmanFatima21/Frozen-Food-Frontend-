@@ -75,7 +75,7 @@
                     </div>
             </div>
         </section>
-
+        
         <section id="about" class="about-section">
             <div class="container">
                 <h2 class="section-title">Our Story</h2>
@@ -124,12 +124,35 @@
             <p>&copy; 2024 Anaya Frozen Foods. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <aside id="shopping-list" class="shopping-list">
-        </aside>
-    <div id="product-modal" class="modal">
-        </div>
     
+    <aside id="shopping-list" class="shopping-list">
+        <button class="close-list-btn">&times;</button>
+        <h2>Your Order List</h2>
+        <div id="list-items" class="list-items">
+            <p class="empty-list-msg">Your list is empty. Add items from the menu!</p>
+        </div>
+        <div class="list-summary">
+            <div class="subtotal">
+                <span>Subtotal:</span>
+                <span id="subtotal-price">0rs</span>
+            </div>
+            <a href="https://wa.me/923090903519" class="btn-primary checkout-btn" target="_blank">Order on WhatsApp</a>
+        </div>
+    </aside>
+    <div id="list-overlay" class="overlay"></div>
+    <button id="open-list-btn" class="open-list-btn">
+        <i class="fas fa-list-alt"></i>
+        <span id="list-item-count">0</span>
+    </button>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+    <div id="modal-overlay" class="overlay"></div>
+
     <script type="module" src="script.js"></script>
     
 </body>
