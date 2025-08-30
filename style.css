@@ -131,7 +131,6 @@ input:checked + .slider:before { transform: translateX(24px); }
 
 /* =========== Hero Section (Glass Effect) =========== */
 .hero-section {
-    /* Using the provided image as the background */
     background-image: url('images/hero-background.png');
     background-size: cover;
     background-position: center;
@@ -144,7 +143,6 @@ input:checked + .slider:before { transform: translateX(24px); }
 }
 
 .hero-content {
-    /* Applying the glassmorphism effect */
     background-color: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -382,4 +380,3 @@ section { padding: 4rem 0; }
     #modal-body { flex-direction: column; align-items: center; text-align: center; }
     .shopping-list { width: 90%; }
 }
- 
