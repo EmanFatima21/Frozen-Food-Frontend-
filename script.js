@@ -339,14 +339,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.className = 'product-card';
                     card.dataset.productId = item._id; 
                     card.innerHTML = `
-                        <img src="${imageUrlFor(item.image)}?w=300&fit=crop" alt="${item.name}" class="product-image">
-                         <div class="product-card-content">
-                            <h3 class="product-name">${item.name}</h3>
-                            <p class="product-details">${item.quantity} - ${item.price}rs</p>
-                            <button class="btn-secondary add-to-list-btn-card">
-                                View Details
-                            </button>
-                        </div>
+                      <img src="${imageUrlFor(item.image)}?w=300&fit=crop" alt="${item.name}" class="product-image" data-product-id="${item._id}">
+                        <div class="product-card-content">
+                          <h3 class="product-name">${item.name}</h3>
+                          <p class="product-details">${item.quantity} - ${item.price}rs</p>
+                          <button class="btn-secondary add-to-list-btn-card" data-product-id="${item._id}">
+                             View Details
+                           </button>
+                         </div>
                     `;
                     popularGrid.appendChild(card);
                 });
